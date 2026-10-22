@@ -1,0 +1,40 @@
+name: Java CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Set up JDK 21
+      uses: actions/setup-java@v4
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+
+    - name: Compile Java Sources
+      run: |
+        mkdir -p bin
+        javac -d bin src/com/cipher/*.java
+
+    - name: Run Automated Test Suite
+      run: |
+        java -cp bin com.cipher.CipherDemoTest
+
+    - name: Package Executable JAR
+      run: |
+        jar --create --file caesar-cipher.jar --main-class com.cipher.Main -C bin .
+
+    - name: Upload JAR Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: caesar-cipher-executable
+        path: caesar-cipher.jar
