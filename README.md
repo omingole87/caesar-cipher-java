@@ -4,7 +4,6 @@
 
 **A modern, robust, and interactive classical cryptography suite with cryptanalysis & auto-cracking.**
 
-[![Java CI](https://github.com/omingole87/caesar-cipher-java/actions/workflows/ci.yml/badge.svg)](https://github.com/omingole87/caesar-cipher-java/actions/workflows/ci.yml)
 [![Java](https://img.shields.io/badge/Java-21%2B-ED8B00?logo=openjdk&logoColor=white)](https://www.oracle.com/java/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
